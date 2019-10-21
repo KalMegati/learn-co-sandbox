@@ -28,18 +28,21 @@ def table_data(table)
     columns = row.max{ |a,b| a.length <=> b.length }.length
     row.each { |cell| cell << " " until cell.length == columns }
   }
+  
   row_break = "-------------------------"
   cell_break = " | "
   
   puts row_break
   
   daters.each { |row|
-    filled_row = "| "
+    #filled_row = "| "
     row.each { |cell| 
+      filled_row = "| "
       cell.each { |feature|
         filled_row << feature
       }
       filled_row << cell_break
+      puts filled_row
     }
     #puts filled_row
     puts row_break
