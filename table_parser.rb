@@ -34,9 +34,15 @@ def table_parser(headers, daters)
   
   puts head
   
-  daters.each { |row|
+  daters.each { |row| # => extending for column size equivalence
     columns = row.max{ |a,b| a.length <=> b.length }.length
     row.each { |cell| cell << " " until cell.length == columns }
+  }
+  
+  daters.each { |row| # => extending for row size equivalence
+    row.each { |cell| 
+    row_width = cell.max{ |a,b| a.length <=> b.length }.length
+    cell.each { |feature| feature << " " until feature.length == row_width }
   }
   
   row_break = "-------------------------"
