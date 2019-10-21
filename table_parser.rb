@@ -21,14 +21,37 @@ end
 
 def table_data(table)
   data = table.css("tr")
-  daters = data.map{|row|row.css("td").text}
-  #binding.pry
-  puts daters
+  data.shift
+  daters = data.map{|row|row.css("td").map{|cell|cell.text.split(", ")}}
+  
+  daters.each { |row|
+    columns = row.max{ |a,b| a.length <=> b.length }.length
+    row.each { |cell| cell << " " until cell.length == columns }
+  }
+  row_break = "-------------------------"
+  cell_break = " | "
+  
+  puts row_break
+  
+  daters.each { |row|
+    filled_row = "| "
+    row.each { |cell| 
+      cell.each { |feature|
+        filled_row << feature
+      }
+      filled_row << cell_break
+    }
+    #puts filled_row
+    puts row_break
+  }
+  
+  binding.pry
+  #puts daters
 end
 
-table_header(html)
+#table_header(html)
 
-#table_data(html)
+table_data(html)
 
 #binding.pry
 
