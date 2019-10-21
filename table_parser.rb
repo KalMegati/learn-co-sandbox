@@ -22,7 +22,7 @@ end
 def table_data(table)
   data = table.css("tr")
   data.shift
-  daters = data.map{|row|row.css("td").map{|cell|cell.text.split(", ")}}
+  daters = data.map{|row|row.css("td").map{|cell|cell.text.downcase.split(", ")}}
 end
 
 def table_parser(headers, daters)
@@ -41,8 +41,9 @@ def table_parser(headers, daters)
   
   daters.each { |row| # => extending for row size equivalence
     row.each { |cell| 
-    row_width = cell.max{ |a,b| a.length <=> b.length }.length
-    cell.each { |feature| feature << " " until feature.length == row_width }
+      row_width = cell.max{ |a,b| a.length <=> b.length }.length
+      cell.each { |feature| feature << " " until feature.length == row_width }
+    }
   }
   
   row_break = "-------------------------"
