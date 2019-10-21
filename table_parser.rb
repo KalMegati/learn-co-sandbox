@@ -19,6 +19,10 @@ def table_header(table)
   puts headers
 end
 
+def row_builder
+  
+end
+
 def table_data(table)
   data = table.css("tr")
   data.shift
@@ -36,19 +40,37 @@ def table_data(table)
   
   daters.each { |row|
     #filled_row = "| "
-    row.each { |cell| 
+    row[1].each_with_index { |feature, index| 
       filled_row = "| "
-      cell.each { |feature|
-        filled_row << feature
-      }
+      filled_row << row[0][index]
       filled_row << cell_break
+      filled_row << feature
       puts filled_row
+      #filled_row << cell_break
+      #puts filled_row
     }
     #puts filled_row
     puts row_break
   }
   
-  binding.pry
+  # daters.each { |row|
+    
+  #   full_row = "| "
+  #   full_row << row[0][0]
+  #   full_row << cell_break
+  #   full_row << row[1][0]
+  #   puts full_row
+    
+  #   full_row = "| "
+  #   full_row << row[0][1]
+  #   full_row << cell_break
+  #   full_row << row[1][1]   
+  #   puts full_row
+    
+  #   puts row_break
+  # }
+  
+  #binding.pry
   #puts daters
 end
 
