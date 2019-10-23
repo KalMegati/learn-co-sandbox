@@ -2,6 +2,8 @@ require 'pry'
 require 'open-uri'
 require 'nokogiri'
 
+def charclass
+
 html = Nokogiri::HTML(open('https://2e.aonprd.com/Classes.aspx'))
 
 classbreak = {}
@@ -12,4 +14,8 @@ html.css("h1 a").each{ |role|
   end
 }
 
-$class = classbreak[gets.chomp.capitalize]
+classbreak
+
+end
+
+#$class = classbreak[gets.chomp.capitalize]

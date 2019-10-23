@@ -2,6 +2,8 @@ require 'pry'
 require 'open-uri'
 require 'nokogiri'
 
+def backclass
+
 html = Nokogiri::HTML(open('https://2e.aonprd.com/Backgrounds.aspx'))
 
 backbreak = {}
@@ -12,4 +14,8 @@ html.css("h1 a").each{ |role|
   end
 }
 
-$background = backbreak[gets.chomp.capitalize]
+backbreak
+
+end
+
+#$background = backbreak[gets.chomp.capitalize]

@@ -2,6 +2,12 @@ require 'pry'
 require 'open-uri'
 require 'nokogiri'
 
+class AnceClass
+  
+end
+
+def anceclass
+  
 html = Nokogiri::HTML(open('https://2e.aonprd.com/Ancestries.aspx'))
 
 ancebreak = {}
@@ -12,9 +18,10 @@ html.css("h2 a").each{ |role|
   end
 }
 
-puts "Wild"
+ancebreak
 
-$ancestry = ancebreak[gets.chomp.capitalize]
+end
+#$ancestry = ancebreak[gets.chomp.capitalize]
 
 #hell = gets.chomp
 
