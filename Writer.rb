@@ -22,9 +22,15 @@ def sel_screen
   puts "| #{$concept}"
   puts "|_______________ ___ ___ ___ __ __ __ _ _ _"
   puts "|"
+<<<<<<< HEAD
   puts "| Ancestry:   #{$ancestry}" if $ancestry
   puts "| Background: #{$background}" if $background
   puts "| Class:      #{$class}" if $class
+=======
+  puts "| Ancestry:   #{$ancestry}"
+  puts "| Background: #{$background}"
+  puts "| Class:      #{$class}"
+>>>>>>> a8aab6083659346a764919ba0a68c6e650da51b2
   
 end
 

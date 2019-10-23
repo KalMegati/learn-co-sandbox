@@ -1,15 +1,28 @@
+require_relative 'ABCs.rb'
+
 class Adventurer
   
-  attr_accessor :high_concept, :ancestry, :background, :class, :description
+  attr_accessor :name, :ancestry, :background, :class, :description
   
   @@all = []
   
-  def initialize(high_concept)
-    @high_concept = high_concept
+  def initialize(name)
+    @name = name
+    @@all << self
   end
   
-  def lookup(aspect)
-    @@all.select()
+  def self.lookup(option)
+    until 
+    if ABCs.ancestries.keys.include?(option)
+      
+    elsif
+    
+    elsif
+    
+    else
+      puts
+    end
+    @@all.select{ |char| char.send("#{aspect}") == option }
   end
   
 end
