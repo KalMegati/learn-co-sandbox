@@ -4,7 +4,7 @@ require 'nokogiri'
 
 source = "http://2e.aonprd.com/"
 
-html = Nokogiri::HTML(open('http://2e.aonprd.com/Ancestries.aspx'))
+html = Nokogiri::HTML(open(source+'Ancestries.aspx'))
 
 races = html.css("h1").css("a").select{|info|!info.text.include?(" ")}
 
@@ -20,6 +20,8 @@ races.map{|race|race.text}.each_with_index{ |race, index|
   racebreak[race] = desc[index]
 }
 
+
+
 # race = Nokogiri::HTML(open(source + info[0]["href"]))
 
 # race_heads = race.css("div.main").css("h2").map{|heading|heading.text}
@@ -33,3 +35,4 @@ races.map{|race|race.text}.each_with_index{ |race, index|
 # mechanics = race_heads[mechstar...]
 
 binding.pry
+
