@@ -1,6 +1,5 @@
-require_relative "AnceClass.rb"
-require_relative "BackClass.rb"
-require_relative "CharClass.rb"
+require_relative "ABCs.rb"
+require_relative "Adventurer.rb"
 
 def startup
   
@@ -11,34 +10,30 @@ end
 
 def sel_concept
   
-  $concept = gets.chomp
+  pitch = gets.chomp
+  
+  Adventurer.new(pitch)
   
 end
 
-def sel_screen
+def sel_screen(character)
   
   puts " _______________ ___ ___ ___ __ __ __ _ _ _"
   puts "|" 
-  puts "| #{$concept}"
+  puts "| #{character.name}"
   puts "|_______________ ___ ___ ___ __ __ __ _ _ _"
   puts "|"
-<<<<<<< HEAD
-  puts "| Ancestry:   #{$ancestry}" if $ancestry
-  puts "| Background: #{$background}" if $background
-  puts "| Class:      #{$class}" if $class
-=======
-  puts "| Ancestry:   #{$ancestry}"
-  puts "| Background: #{$background}"
-  puts "| Class:      #{$class}"
->>>>>>> a8aab6083659346a764919ba0a68c6e650da51b2
-  
+  puts "| Ancestry:   #{character.ancestry}" if character.ancestry
+  puts "| Background: #{character.background}" if character.background
+  puts "| Class:      #{character.class}" if character.class
+
 end
 
-def sel_aspect()
+def sel_aspect(aspect, character)
   
-  puts "Select an Ancestry"
+  puts "Select a #{aspect.to_s.capitalize}"
   
-  puts anceclass
+  
   
   choice = gets.chomp.capitalize
   
@@ -47,18 +42,18 @@ def sel_aspect()
   confirm = gets.chomp.capitalize[0]
   
   if confirm == "Y"
-    $ancestry = choice
+    character.send("#{aspect}=", choice)
   else
-    sel_aspect
+    sel_aspect(aspect, character)
   end
   
 end
 
 startup
-sel_concept
-sel_screen
-sel_aspect
-sel_screen
+character = sel_concept
+sel_screen(character)
+sel_aspect(:ancestry, character)
+sel_screen(character)
 #binding.pry
 
 class Writer

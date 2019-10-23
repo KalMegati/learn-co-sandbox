@@ -11,18 +11,18 @@ class Adventurer
     @@all << self
   end
   
-  def self.lookup(option)
-    until 
-    if ABCs.ancestries.keys.include?(option)
+  # def self.lookup(option)
+  #   until 
+  #   if ABCs.ancestries.keys.include?(option)
       
-    elsif
+  #   elsif 
+      
+  #   elsif
     
-    elsif
-    
-    else
-      puts
-    end
-    @@all.select{ |char| char.send("#{aspect}") == option }
-  end
+  #   else
+  #     puts
+  #   end
+  #   @@all.select{ |char| char.send("#{aspect}") == option }
+  # end
   
 end

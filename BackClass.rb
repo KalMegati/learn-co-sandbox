@@ -15,11 +15,15 @@ html.css("h1 a").each{ |role|
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 backbreak
 
 end
 
 #$background = backbreak[gets.chomp.capitalize]
+=======
+$background = backbreak[gets.chomp.capitalize]
+>>>>>>> a8aab6083659346a764919ba0a68c6e650da51b2
 =======
 $background = backbreak[gets.chomp.capitalize]
 >>>>>>> a8aab6083659346a764919ba0a68c6e650da51b2

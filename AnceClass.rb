@@ -23,6 +23,8 @@ end
 
 $ancestry = ancebreak[gets.chomp.capitalize]
 
+$ancestry = ancebreak[gets.chomp.capitalize]
+
 #hell = gets.chomp
 
 #$heaven = Nokogiri::HTML(open("https://2e.aonprd.com/"+ancebreak[hell])).css("i")[1].text # => grabs flavor blurb

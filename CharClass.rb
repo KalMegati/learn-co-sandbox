@@ -15,11 +15,15 @@ html.css("h1 a").each{ |role|
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 classbreak
 
 end
 
 #$class = classbreak[gets.chomp.capitalize]
+=======
+$class = classbreak[gets.chomp.capitalize]
+>>>>>>> a8aab6083659346a764919ba0a68c6e650da51b2
 =======
 $class = classbreak[gets.chomp.capitalize]
 >>>>>>> a8aab6083659346a764919ba0a68c6e650da51b2
