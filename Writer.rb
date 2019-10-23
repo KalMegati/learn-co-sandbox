@@ -9,10 +9,9 @@ def sel_screen
   puts "| Pathfinder 2E Character Builder"
   puts "|_______________ ___ ___ ___ __ __ __ _ _ _"
   puts "|"
-  puts "| Ancestry"
-  puts "|  Background"
-  puts "|   Class"
-  puts "|    Description"
+  puts "| Ancestry:   #{$ancestry}"
+  puts "| Background: #{$background}"
+  puts "| Class:      #{$class}"
   
 end
 

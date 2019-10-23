@@ -11,3 +11,5 @@ html.css("h1 a").each{ |role|
     backbreak[role.text] = role.attribute("href").value
   end
 }
+
+$background = backbreak[gets.chomp.capitalize]

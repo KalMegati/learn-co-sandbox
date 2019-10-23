@@ -14,6 +14,8 @@ html.css("h2 a").each{ |role|
 
 puts "Wild"
 
+$ancestry = ancebreak[gets.chomp.capitalize]
+
 #hell = gets.chomp
 
 #$heaven = Nokogiri::HTML(open("https://2e.aonprd.com/"+ancebreak[hell])).css("i")[1].text # => grabs flavor blurb

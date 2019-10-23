@@ -11,3 +11,5 @@ html.css("h1 a").each{ |role|
     classbreak[role.text] = role.attribute("href").value
   end
 }
+
+$class = classbreak[gets.chomp.capitalize]
