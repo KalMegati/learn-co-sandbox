@@ -4,6 +4,14 @@ require 'nokogiri'
 
 class AnceClass
   
+  attr_accessor
+  
+  def self.all
+    @@all
+  end
+  
+  
+  
 end
 
 def anceclass
@@ -21,6 +29,7 @@ html.css("h2 a").each{ |role|
 ancebreak
 
 end
+
 #$ancestry = ancebreak[gets.chomp.capitalize]
 
 #hell = gets.chomp
