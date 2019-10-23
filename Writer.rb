@@ -22,10 +22,14 @@ def sel_screen(character)
   puts "|" 
   puts "| #{character.name}"
   puts "|_______________ ___ ___ ___ __ __ __ _ _ _"
-  puts "|"
+  puts "|" if character.ancestry
   puts "| Ancestry:   #{character.ancestry}" if character.ancestry
   puts "| Background: #{character.background}" if character.background
   puts "| Class:      #{character.class}" if character.class
+  puts "|" if character.class
+  puts "'"
+  puts "'"
+  puts "'"
 
 end
 
@@ -49,12 +53,17 @@ def sel_aspect(aspect, character)
   
 end
 
-startup
-character = sel_concept
-sel_screen(character)
-sel_aspect(:ancestry, character)
-sel_screen(character)
-#binding.pry
+def prompter
+  startup
+  character = sel_concept
+  sel_screen(character)
+  sel_aspect(:ancestry, character)
+  sel_aspect(:background, character)
+  sel_aspect(:class, character)
+  sel_screen(character)
+end
+
+prompter
 
 class Writer
   
