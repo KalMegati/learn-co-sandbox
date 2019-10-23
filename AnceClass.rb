@@ -2,17 +2,6 @@ require 'pry'
 require 'open-uri'
 require 'nokogiri'
 
-class AnceClass
-  
-  attr_accessor
-  
-  def self.all
-    @@all
-  end
-  
-  
-  
-end
 
 def anceclass
   
