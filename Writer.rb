@@ -3,16 +3,17 @@ require_relative "Adventurer.rb"
 
 def startup
   
-  puts "A character begins with a concept."
-  puts "What is your pitch, in twelve words or fewer?"
+  puts "A legend begins with a name."
+  puts
+  puts "                              Who are you?"
   
 end
 
 def sel_concept
   
-  pitch = gets.chomp
-  
-  Adventurer.new(pitch)
+  name = gets.chomp
+  $abcs = ABCs.new
+  Adventurer.new(name)
   
 end
 
@@ -35,11 +36,21 @@ end
 
 def sel_aspect(aspect, character)
   
+  if aspect == :ancestry
+    plu_aspect = :ancestries
+  elsif aspect == :background
+    plu_aspect = :backgrounds
+  elsif aspect == :class
+    plu_aspect = :classes
+  end
+  
+  puts $abcs.send(plu_aspect).keys
+  
   puts "Select a #{aspect.to_s.capitalize}"
   
-  
-  
   choice = gets.chomp.capitalize
+  
+  $abcs.summarize(choice, plu_aspect)
   
   puts "Will you play a #{choice}? Y/N"
   
