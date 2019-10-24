@@ -28,15 +28,21 @@ class ABCs
     @classes = hasher("Classes", "h1")
   end
   
-  def summarize(option, aspect)
+  def summarize(option, aspect) # => grabs flavor blurb
+    binding.pry
     page = "https://2e.aonprd.com/"+self.send("#{aspect.downcase}")[option]
-    puts Nokogiri::HTML(open(page)).css("i")[1].text # => grabs flavor blurb
+    if page.include?("Backgrounds")
+      binding.pry
+      puts "Wild"
+    else
+      puts Nokogiri::HTML(open(page)).css("i")[1].text
+    end
   end
   
 end
 
 why = ABCs.new
 
-why.summarize("Lizardfolk", "Ancestries")
+why.summarize("Acolyte", "BACKGROUNDS")
 
 #binding.pry
