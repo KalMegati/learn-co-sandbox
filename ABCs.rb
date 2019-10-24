@@ -31,6 +31,7 @@ class ABCs
   def summarize(option, aspect) # => grabs flavor blurb
     page = "https://2e.aonprd.com/"+self.send("#{aspect}")[option]
     blurb = Nokogiri::HTML(open(page))
+    binding.pry
     if page.include?("Backgrounds")
       puts blurb.text.match(/pg. 6\d(.+)Choose/)[1]
     else
@@ -42,6 +43,8 @@ end
 
 why = ABCs.new
 
-#why.summarize("Acolyte", "Backgrounds")
+why.summarize("Dwarf", "ancestries")
 
 #binding.pry
+
+#hell = blurb.text.scan(/Ability Boost|Strength|Dexterity|Constitution|Intelligence|Wisdom|Charisma|Ability Flaw|Languages/)
